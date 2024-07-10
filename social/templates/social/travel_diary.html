@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Travel Diary</title>
+    </head>
+        <body>
+            <h1>{{ diary.user.username }}'s Travel Diary</h1>
+                <p>{{ diary.content }}</p>
+
+                <h2>Reviews</h2>
+                {% if reviews %}
+                    <ul>
+                    {% for review in reviews %}
+                        <li>{{ review.created_at }} - {{ review.content }}</li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No reviews found.</p>
+                {% endif %}
+        </body>
+</html>
